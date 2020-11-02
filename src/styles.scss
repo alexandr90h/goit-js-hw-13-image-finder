@@ -1,9 +1,39 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+}
+.form-section {
+  background-color: rgba(101, 92, 223, 0.692);
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  input[type='text'] {
+    width: 400px;
+    font-size: 30px;
+    font-weight: 600;
+    // padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    font-family: 'Cairo', sans-serif;
+  }
+  input[type='button'] {
+    width: 150px;
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(0, 89, 255, 0.527);
+    color: white;
+    font-family: 'Cairo', sans-serif;
+  }
 }
