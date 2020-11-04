@@ -57,3 +57,19 @@ html {
   padding-left: 30px;
   padding-right: 30px;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -5px;
+  li {
+    margin: 5px;
+    list-style: none;
+  }
+  img {
+    object-fit: contain;
+  }
+}
+.btn-load-more {
+  display: none;
+}
