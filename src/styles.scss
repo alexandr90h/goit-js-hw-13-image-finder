@@ -30,7 +30,7 @@ html {
     border-radius: 4px;
     font-family: 'Cairo', sans-serif;
   }
-  input[type='button'] {
+  input[type='submit'] {
     width: 150px;
     margin-top: 30px;
     padding: 5px;
@@ -67,7 +67,8 @@ html {
     list-style: none;
   }
   img {
-    object-fit: contain;
+    object-fit: cover;
+    width: 500px;
   }
 }
 .btn-load-more {
