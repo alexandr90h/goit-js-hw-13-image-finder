@@ -9,7 +9,7 @@ html {
   padding: 0;
 }
 .form-section {
-  background: rgb(194, 194, 218);
+  background: #f5f4fa;
   padding-top: 70px;
   padding-bottom: 70px;
   padding-left: 30px;
@@ -26,7 +26,7 @@ html {
     font-weight: 600;
     padding-left: 10px;
     padding-right: 10px;
-    border: 2px solid rgb(156, 156, 156);
+    border: 2px solid #f5f4fa;
     border-radius: 4px;
     font-family: 'Cairo', sans-serif;
   }
@@ -36,41 +36,73 @@ html {
     padding: 5px;
     font-size: 20px;
     font-weight: 600;
-    background: linear-gradient(#5184f3, #1b0ce7);
-    border: 1px solid rgba(101, 92, 223, 0.692);
+    background: #2196f3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    border: 1px solid rgba(101, 92, 223, 0.692);
     color: white;
     font-family: 'Cairo', sans-serif;
     &:focus {
       outline: none;
     }
     &:hover {
-      background: linear-gradient(#1b0ce7, #5184f3);
+      background: #188ce8;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     }
     &:active {
-      background: linear-gradient(#0c3fe7, #5192f3);
+      background: #188ce8;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     }
   }
 }
 .galery-section {
-  background: rgb(194, 194, 218);
+  background: #f5f4fa;
   padding-left: 30px;
   padding-right: 30px;
+  padding-bottom: 70px;
 }
 .gallery {
   display: flex;
+  margin: -15px;
+  margin-left: auto;
+  margin-right: auto;
   flex-wrap: wrap;
   align-items: center;
-  margin: -5px;
+  max-width: 1200px;
   li {
-    margin: 5px;
+    position: relative;
+    margin: 15px;
+    // width: 450px;
+    flex-basis: calc(((100%-30px) - 6 * 15px) / 3);
     list-style: none;
+    background: #ffffff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
   }
   img {
+    display: block;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
-    width: 500px;
+    object-position: top;
   }
 }
 .btn-load-more {
   display: none;
+}
+.stats {
+  position: absolute;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 0;
+}
+.stats-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  i {
+    margin-right: 10px;
+  }
 }
