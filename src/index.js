@@ -20,11 +20,14 @@ function onSearch(e) {
     clearArtMarkup();
 }
 function onLoadMore() {
-    imageApiService.fetchArticles().then(appArtMarkup);
-//     window.scrollTo({
-//     top: innerHeight,
-//     behavior: "smooth"
-// });
+    imageApiService.fetchArticles().then(appArtMarkup).finally(
+            window.scrollTo({
+    top: innerHeight*imageApiService.page,
+    behavior: "smooth"
+            })
+    );
+    console.log(innerHeight);
+    console.log(innerHeight*imageApiService.page);
 }
 function appArtMarkup (hits) {
     refs.galleryElem.insertAdjacentHTML('beforeend', galeryListTempl(hits));
