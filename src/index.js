@@ -4,6 +4,7 @@ import galeryListTempl from './templates/galery.hbs';
 import ImageApiService from './js/query-service.js';
 
 const refs = {
+    bodyElem: document.querySelector('body'),
     galleryElem: document.querySelector('.gallery'),
     searchFormElem: document.querySelector('.search-form'),
     btnLoadMore:document.querySelector('.btn-load-more')
@@ -17,17 +18,17 @@ function onSearch(e) {
     imageApiService.query = e.currentTarget.elements.query.value;
     imageApiService.resetPage();
     imageApiService.fetchArticles().then(appArtMarkup).finally(refs.btnLoadMore.style.display = 'block');
+    console.log(refs.bodyElem.clientHeight);
     clearArtMarkup();
 }
 function onLoadMore() {
-    imageApiService.fetchArticles().then(appArtMarkup).finally(
-            window.scrollTo({
-    top: innerHeight*imageApiService.page,
-    behavior: "smooth"
-            })
-    );
-    console.log(innerHeight);
-    console.log(innerHeight*imageApiService.page);
+    setTimeout(() => {
+        window.scrollTo({
+        top: refs.bodyElem.clientHeight-1250,
+        behavior: "smooth"
+    });    
+    }, 1000);
+    imageApiService.fetchArticles().then(appArtMarkup);
 }
 function appArtMarkup (hits) {
     refs.galleryElem.insertAdjacentHTML('beforeend', galeryListTempl(hits));
