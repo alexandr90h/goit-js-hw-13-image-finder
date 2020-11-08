@@ -18,7 +18,6 @@ function onSearch(e) {
     imageApiService.query = e.currentTarget.elements.query.value;
     imageApiService.resetPage();
     imageApiService.fetchArticles().then(appArtMarkup).finally(refs.btnLoadMore.style.display = 'block');
-    console.log(refs.bodyElem.clientHeight);
     clearArtMarkup();
 }
 function onLoadMore() {

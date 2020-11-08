@@ -3,10 +3,10 @@ export default class ImageApiService {
         this.searchQuery = '';
         this._page = 1;
     }
-   fetchArticles() {
+  async fetchArticles() {
         const KEY = '18956584-3ac01e2418e4c39c7eb5dacd9';
         const SEACH_URL = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${KEY}`;
-       return fetch(SEACH_URL).then(resolve => {
+       return  await fetch(SEACH_URL).then(resolve => {
             return resolve.json();
         }).then(data => {
             this._page += 1;

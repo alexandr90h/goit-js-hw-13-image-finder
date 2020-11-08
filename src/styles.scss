@@ -13,7 +13,7 @@ html {
 .form-section {
   background: #f5f4fa;
   padding-top: 70px;
-  // padding-bottom: 70px;
+  padding-bottom: 70px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -22,7 +22,8 @@ html {
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  input[type='text'] {
+
+  input[name="query"] {
     max-width: 400px;
     font-size: 30px;
     font-weight: 600;
@@ -31,10 +32,6 @@ html {
     border: 2px solid #f5f4fa;
     border-radius: 4px;
     font-family: 'Cairo', sans-serif;
-    // @media screen and (min-width: 480px) {
-    //   font-size: 25px;
-    //   max-width: 300px;
-    // }
   }
   input[type='submit'] {
     width: 150px;
