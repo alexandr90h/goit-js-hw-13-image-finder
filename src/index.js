@@ -17,13 +17,11 @@ function onSearch(e) {
     e.preventDefault();
     imageApiService.query = e.currentTarget.elements.query.value;
     imageApiService.resetPage();
-    imageApiService.fetchArticles().then(appArtMarkup);
-    clearArtMarkup();
-    if (appArtMarkup) {
-        setTimeout(() => {
-                refs.btnLoadMore.style.display = 'block';
-        }, 500);
-    }
+    imageApiService.fetchArticles().then(arrt=>{
+        clearArtMarkup();
+        appArtMarkup(arrt);
+        refs.btnLoadMore.style.display = 'block';
+    });
 }
 function onLoadMore() {
     setTimeout(() => {
