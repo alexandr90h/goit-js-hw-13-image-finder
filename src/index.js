@@ -17,8 +17,13 @@ function onSearch(e) {
     e.preventDefault();
     imageApiService.query = e.currentTarget.elements.query.value;
     imageApiService.resetPage();
-    imageApiService.fetchArticles().then(appArtMarkup).finally(refs.btnLoadMore.style.display = 'block');
+    imageApiService.fetchArticles().then(appArtMarkup);
     clearArtMarkup();
+    if (appArtMarkup) {
+        setTimeout(() => {
+                refs.btnLoadMore.style.display = 'block';
+        }, 500);
+    }
 }
 function onLoadMore() {
     setTimeout(() => {
