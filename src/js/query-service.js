@@ -1,3 +1,5 @@
+import { error } from "@pnotify/core";
+
 export default class ImageApiService {
     constructor() {
         this.searchQuery = '';
@@ -11,7 +13,7 @@ export default class ImageApiService {
         }).then(data => {
             this._page += 1;
             return data.hits;
-        })
+        });
     }
     resetPage() {
         this._page = 1;
