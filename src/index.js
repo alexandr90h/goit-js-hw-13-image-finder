@@ -73,8 +73,8 @@ function onOpenModal(e) {
 }
 async function onScroll() {
     try {
-            window.scrollTo({
-        top: intElemOffsetHeight,
+        window.scrollTo({
+        top: intElemOffsetHeight+270,
         behavior: "smooth"
     });    
     } catch (error) {
