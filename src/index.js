@@ -35,13 +35,13 @@ async function onSearch(e) {
             }
             clearArtMarkup();
             appArtMarkup(arrt);
-            refs.btnLoadMore.style.display = 'block';
             if (arrt.length < 12) {
                 refs.btnLoadMore.style.display = 'none';
                 error.errorOnMore();
+            } else {
+                refs.btnLoadMore.style.display = 'block';
             }
-    })
-    } catch (error) {
+    })} catch (error) {
         console.log(error);
     }
 }
@@ -51,8 +51,13 @@ async function onLoadMore() {
             intElemOffsetHeight = refs.galleryElem.offsetHeight;
             appArtMarkup(arrt);
             onScroll();
+            if (arrt.length < 12) {
+                refs.btnLoadMore.style.display = 'none';
+                error.errorOnMore();
+            } else {
+                refs.btnLoadMore.style.display = 'block';
+            }
         });
-        
     } catch (error) {
         console.log(error);
     }
