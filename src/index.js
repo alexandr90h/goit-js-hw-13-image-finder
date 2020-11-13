@@ -6,6 +6,7 @@ import Error from './js/error-log.js';
 
 const refs = {
     bodyElem: document.querySelector('body'),
+    formSectionElem:document.querySelector('.form-section'),
     galleryElem: document.querySelector('.gallery'),
     searchFormElem: document.querySelector('.search-form'),
     btnLoadMore:document.querySelector('.btn-load-more')
@@ -79,7 +80,7 @@ function onOpenModal(e) {
 async function onScroll() {
     try {
         window.scrollTo({
-        top: intElemOffsetHeight+270,
+        top: intElemOffsetHeight+refs.formSectionElem.offsetHeight,
         behavior: "smooth"
     });    
     } catch (error) {
